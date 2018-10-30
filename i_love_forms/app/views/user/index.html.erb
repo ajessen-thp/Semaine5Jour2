@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="row justify-content-center">I Like Trains</h1>
+  <% unless flash.alert == nil %>
+    <% unless flash[:alert]["succes_add"] == nil %>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <div class="alert alert-success">
+            <%= flash[:alert]["succes_add"]%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="row justify-content-center">
+    <% if @users.first == nil %>
+      <div class="col-5 shadow p-3">
+        <h3>There is no user in the database</h3>
+        <%= link_to 'Add User', '/user/new', class: "btn btn-dark col-12" %>
+      </div>
+    <% else %>
+      <% @users.each do |user| %>
+        <div class="card col-5 mb-3 mr-3 p-0 shadow">
+          <div class="card-header">
+            <h5 class="card-title"><%= user.username %></h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= user.bio %></p>
+          </div>
+          <div class="card-footer text-muted">
+            <%= user.email %>
+          </div>
+        </div>
+      <% end %>
+    <%end%>
+  </div>
+</div>

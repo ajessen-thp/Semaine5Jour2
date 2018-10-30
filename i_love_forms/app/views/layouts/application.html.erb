@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>I Love Forms</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <header class="mb-5">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <%= link_to 'I love Forms', "/", class: "navbar-brand" %>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to 'Add User', "/user/new", class: "nav-link" %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>
